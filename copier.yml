@@ -8,7 +8,7 @@ prettyname:
   type: str
   help: What is your project name in title case?
 orgname:
-  default: scipp
+  default: ''
   type: str
   help: What is your organization name?
 namespace_package:
@@ -31,12 +31,9 @@ nightly_deps:
     List of dependencies to install from GitHub during nightly builds,
     separated by commas. Make sure to also list transitive dependencies,
     otherwise their released versions will be used. Specify either a
-    repository name or 'org/repo'. If no organization is given it defaults
-    to 'scipp'. In either case, the 'main' branch will be used. Example:
-        scipp,sciline,dask/dask
-related_projects:
+    repository name or 'org/repo'. 'main' branch will be used. Example: dask/dask
+community_contact_email:
+  default: 'TODO: Fill Community Contact Email.'
   type: str
   help: |
-    List of related projects, separated by commas.
-    This will be used to generate a list of links in the documentation.
-    For example, "Scipp,Sciline,Plopp".
+    Contact email for the community. It will be rendered in the CODE_OF_CONDUCT.md file.

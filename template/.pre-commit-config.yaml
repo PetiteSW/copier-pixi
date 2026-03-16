@@ -33,8 +33,7 @@ repos:
     rev: v2.4.1
     hooks:
       - id: codespell
-        additional_dependencies:
-          - tomli
+        exclude: pixi.lock
         exclude_types:
           - svg
   - repo: https://github.com/pre-commit/pygrep-hooks

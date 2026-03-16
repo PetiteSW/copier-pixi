@@ -1,20 +1,20 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
-# Copier template for Scipp projects
+# Copier template for projects that uses Pixi
 
 See [copier](https://copier.readthedocs.io/en/stable/) for details.
 Usage example:
 
 ```sh
-copier copy gh:scipp/copier_template myproject  # requires python>=3.9
+copier copy gh:path/to/the/copier_template myproject  # requires python>=3.9
 cd myproject
 git init .
-tox -e deps  # After adding dependencies to pyproject.toml
 git add * .copier-answers.yml .github .gitignore .pre-commit-config.yaml .python-version
 git commit -m "Setup from copier_template"
-tox -e docs
-pip install -e .
-git remote add origin git@github.com:scipp/myproject.git
+pixi install
+pixi run test
+pixi run docs
+git remote add origin git@github.com:name-of-my-org-or-user-name/myproject.git
 ```
 
 ## Manual Configuration
@@ -34,17 +34,19 @@ Once the project is built from the template, there are manual settings to be con
    Click the gear and check the "Use your GitHub Pages website" checkbox for "Website".
 
 ### Package Deployment
-See [releasing scipp](https://scipp.github.io/reference/developer/releasing-scipp.html#updating-an-expired-anaconda-token) for more information about deployment.
-
-#### Conda
-Go to Settings > Secrets > Actions > Organization secrets.
-There is `scipp` organization-wide anaconda key, `ANACONDATOKEN`. But it should be enabled per repository.
+Package deployment can be done using the github CI action.
 
 #### PyPI
 
 1. Create a new project by [adding a trusted publisher](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/).
 2. In the GitHub project settings, go to `Environments` and add a new environment `release`.
    Configure appropriate protection rules such as required reviewers and deploying only from protected branches.
+
+#### Conda Forge
+
+Once the pypi wheel is uploaded, we can deploy the package to conda-forge channel.
+
+This should be done manually by either opening a PR or adding this package to an existing recipe.
 
 ### Branch Protection Rules
 Go to `Settings > Branches` and in the `Branch protection rules` add rule for `main` branch to project it.

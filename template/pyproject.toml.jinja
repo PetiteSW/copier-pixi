@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "{{projectname}}"
 description = "{{description}}"
-authors = [{ name = "Scipp contributors" }]
+authors = [{ name = "{{orgname|capitalize}} contributors" }]
 license = "BSD-3-Clause"
 license-files = ["LICENSE"]
 readme = "README.md"
@@ -27,7 +27,6 @@ classifiers = [
 requires-python = ">={{min_python}}"
 
 # IMPORTANT:
-# Run 'tox -e deps' after making changes here. This will update requirement files.
 # Make sure to list one dependency per line.
 dependencies = [
 ]
@@ -41,7 +40,7 @@ test = [
 
 [project.urls]
 "Bug Tracker" = "https://github.com/{{orgname}}/{{projectname}}/issues"
-"Documentation" = "https://{{orgname}}.github.io{% if projectname != 'scipp' %}/{{projectname}}{% endif %}"
+"Documentation" = "https://{{orgname}}.github.io/{{projectname}}"
 "Source" = "https://github.com/{{orgname}}/{{projectname}}"
 
 [tool.setuptools_scm]
