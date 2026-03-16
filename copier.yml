@@ -2,7 +2,11 @@ _subdirectory: template
 
 projectname:
   type: str
-  help: What is your project name?
+  help: What is your project name? (i.e. Python package name)
+reponame:
+  default: '{{projectname}}'
+  type: str
+  help: What is your repository name?
 prettyname:
   default: '{{projectname|capitalize}}'
   type: str
