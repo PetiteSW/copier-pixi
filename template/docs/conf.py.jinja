@@ -143,10 +143,7 @@ html_theme_options = {
         "image_light": "_static/logo.svg",
         "image_dark": "_static/logo-dark.svg",
     },
-    "external_links": [
-{% for link in related_projects.replace(' ', '').split(',')|sort -%}
-{% raw %}        {% endraw %}{"name": "{{ link }}", "url": "https://{{orgname}}.github.io"},
-{% endfor %}    ],
+    "external_links": [],
     "icon_links": [
         {
             "name": "GitHub",
