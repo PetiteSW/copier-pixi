@@ -50,8 +50,8 @@ jobs:
       - run: sed -i '/dependencies = \[/a\    "numpy"' pyproject.toml
         working-directory: ${{ env.DUMMYPROJECTPATH }}
       - uses: prefix-dev/setup-pixi@v0.9.4
-        working-directory: ${{ env.DUMMYPROJECTPATH }}
         with:
+          working-directory: ${{ env.DUMMYPROJECTPATH }}
           pixi-version: v0.65.0
           frozen: true
           cache: true
