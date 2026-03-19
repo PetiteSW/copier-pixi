@@ -8,5 +8,6 @@ version = "0.1.0"
 [tasks]
 
 [dependencies]
+python = "3.12"
 copier = "*"
 
