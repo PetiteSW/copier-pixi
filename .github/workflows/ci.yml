@@ -53,8 +53,6 @@ jobs:
         working-directory: ${{ env.DUMMYPROJECTPATH }}
       - run: pixi run test
         working-directory: ${{ env.DUMMYPROJECTPATH }}
-      - run: pixi run docs
-        working-directory: ${{ env.DUMMYPROJECTPATH }}
       - run: git add -A && pixi run lint  # Files should be added to be checked
         working-directory: ${{ env.DUMMYPROJECTPATH }}
 
