@@ -49,7 +49,7 @@ jobs:
         working-directory: ${{ env.DUMMYPROJECTPATH }}
       - run: sed -i '/dependencies = \[/a\    "numpy"' pyproject.toml
         working-directory: ${{ env.DUMMYPROJECTPATH }}
-      - run: pixi install --frozen --locked --all
+      - run: pixi install --all
         working-directory: ${{ env.DUMMYPROJECTPATH }}
       - run: pixi run test
         working-directory: ${{ env.DUMMYPROJECTPATH }}
