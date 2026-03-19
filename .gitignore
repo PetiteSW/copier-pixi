@@ -23,3 +23,6 @@ CMakeSettings.json
 .mypy_cache
 docs/generated/
 *.DS_Store
+# pixi environments
+.pixi/*
+!.pixi/config.toml

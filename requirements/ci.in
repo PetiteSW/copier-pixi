@@ -1,5 +1,0 @@
-copier
-tox
-
-# See https://github.com/copier-org/copier/issues/1568
-pyyaml-include<2
