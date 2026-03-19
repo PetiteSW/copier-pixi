@@ -1,13 +1,22 @@
 [workspace]
 authors = ["YooSunYoung <17974113+YooSunYoung@users.noreply.github.com>"]
 channels = ["conda-forge"]
-name = "copier_pixi_template"
+name = "copier-pixi"
 platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+setup-test = { cmd = """copier copy ./ \"dummy\" \
+              -l \
+              -d description=\"Dummy project to test the template.\" \
+              -d projectname=\"testdummy\" \
+              -d max_python=\"3.13\" \
+              -d min_python=\"3.12\" \
+              -d nightly_deps=\"\"""" }
+
+test = { cmd = "git init && pixi install && git add -A && pixi run lint", cwd = "dummy", depends-on = ["setup-test"] }
 
 [dependencies]
-python = "3.12"
+python = "3.12.*"
 copier = "*"
 

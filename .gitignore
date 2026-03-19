@@ -23,6 +23,10 @@ CMakeSettings.json
 .mypy_cache
 docs/generated/
 *.DS_Store
+
+# copier test files
+dummy
+
 # pixi environments
 .pixi/*
 !.pixi/config.toml
